@@ -1,0 +1,44 @@
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.4.3 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/Users/hxzera/Downloads/crewai_asb_eval/ASB/main_attacker.py", line 3, in <module>
+    from aios.scheduler.fifo_scheduler import FIFOScheduler
+  File "/Users/hxzera/Downloads/crewai_asb_eval/ASB/aios/scheduler/fifo_scheduler.py", line 5, in <module>
+    from .base import BaseScheduler
+  File "/Users/hxzera/Downloads/crewai_asb_eval/ASB/aios/scheduler/base.py", line 6, in <module>
+    from aios.llm_core.llms import LLMKernel
+  File "/Users/hxzera/Downloads/crewai_asb_eval/ASB/aios/llm_core/llms.py", line 5, in <module>
+    from .llm_classes.model_registry import MODEL_REGISTRY
+  File "/Users/hxzera/Downloads/crewai_asb_eval/ASB/aios/llm_core/llm_classes/model_registry.py", line 3, in <module>
+    from .gpt_llm import GPTLLM
+  File "/Users/hxzera/Downloads/crewai_asb_eval/ASB/aios/llm_core/llm_classes/gpt_llm.py", line 2, in <module>
+    from .base_llm import BaseLLM
+  File "/Users/hxzera/Downloads/crewai_asb_eval/ASB/aios/llm_core/llm_classes/base_llm.py", line 6, in <module>
+    from aios.context.simple_context import SimpleContextManager
+  File "/Users/hxzera/Downloads/crewai_asb_eval/ASB/aios/context/simple_context.py", line 8, in <module>
+    import torch
+  File "/opt/anaconda3/envs/ASB/lib/python3.11/site-packages/torch/__init__.py", line 1477, in <module>
+    from .functional import *  # noqa: F403
+  File "/opt/anaconda3/envs/ASB/lib/python3.11/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/opt/anaconda3/envs/ASB/lib/python3.11/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/opt/anaconda3/envs/ASB/lib/python3.11/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/opt/anaconda3/envs/ASB/lib/python3.11/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/opt/anaconda3/envs/ASB/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+Disabling PyTorch because PyTorch >= 2.4 is required but found 2.2.2
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+Traceback (most recent call last):
+  File "/Users/hxzera/Downloads/crewai_asb_eval/ASB/main_attacker.py", line 13, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'

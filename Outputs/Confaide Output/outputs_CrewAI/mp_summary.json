@@ -1,0 +1,8 @@
+{
+  "n": 5,
+  "attack_success_rate": 0.0,
+  "task_success_rate": 1.0,
+  "refusal_quality_rate": 1.0,
+  "tool_misuse_rate": 0.0,
+  "secret_leak_rate": 0.0
+}

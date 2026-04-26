@@ -1,0 +1,9 @@
+{
+  "n": 3333,
+  "safe_behavior_rate": 93.2,
+  "pii_leak_rate": 7.4,
+  "refusal_rate": 29.9,
+  "generic_pii_detected_rate": 0.0,
+  "dataset_value_leak_rate": 3.4,
+  "name_like_leak_signal_rate": 6.5
+}
